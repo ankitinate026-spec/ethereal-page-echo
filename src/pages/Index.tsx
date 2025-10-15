@@ -111,54 +111,42 @@ const Index = () => {
             alt="Travel destination paradise"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
+          <div 
+            className="absolute inset-0"
+            style={{ background: "var(--gradient-hero)" }}
+          />
         </div>
 
-        {/* Animated Background Orbs */}
+        {/* Subtle Background Elements */}
         <div
-          className="absolute top-20 left-1/4 w-96 h-96 rounded-full opacity-20 animate-pulse-glow"
+          className="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl"
           style={{
-            background: "radial-gradient(circle, hsl(270 70% 65% / 0.4), transparent)",
+            background: "radial-gradient(circle, hsl(270 70% 65%), transparent)",
             transform: `translateY(${parallaxTransform * 0.3}px)`,
           }}
         />
         <div
-          className="absolute bottom-20 right-1/4 w-[32rem] h-[32rem] rounded-full opacity-20 animate-pulse-glow"
+          className="absolute bottom-20 right-1/4 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
           style={{
-            background: "radial-gradient(circle, hsl(195 70% 55% / 0.4), transparent)",
+            background: "radial-gradient(circle, hsl(195 70% 55%), transparent)",
             transform: `translateY(${parallaxTransform * 0.5}px)`,
-            animationDelay: "2s",
           }}
         />
 
-        {/* Floating Elements */}
-        <div
-          className="absolute top-1/4 right-1/3 w-20 h-20 opacity-20 animate-float"
-          style={{ transform: `translateY(${parallaxTransform * 0.2}px)` }}
-        >
-          <Plane className="w-full h-full text-primary" />
-        </div>
-        <div
-          className="absolute bottom-1/3 left-1/4 w-16 h-16 opacity-20 animate-float-slow"
-          style={{ transform: `translateY(${parallaxTransform * 0.4}px)` }}
-        >
-          <MapPin className="w-full h-full text-secondary" />
-        </div>
-
         {/* Hero Content */}
         <div
-          className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+          className="relative z-10 text-center px-6 max-w-6xl mx-auto"
           style={{
             transform: `translateY(${parallaxTransform}px)`,
             opacity: parallaxOpacity,
           }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8 animate-scale-in">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md mb-8 animate-scale-in">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary">Your Adventure Awaits</span>
+            <span className="text-sm font-medium text-primary">Your Adventure Awaits</span>
           </div>
 
-          <h1 className="text-7xl md:text-8xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 animate-fade-in-up leading-tight">
             <span
               className="bg-gradient-to-r from-primary via-primary-glow to-secondary bg-clip-text text-transparent"
               style={{
@@ -172,7 +160,7 @@ const Index = () => {
             <span className="text-foreground">Like Never Before</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in-up opacity-90" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground/90 mb-12 max-w-2xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
             Discover breathtaking destinations, create unforgettable memories,
             and embark on the journey of a lifetime with expert guidance.
           </p>
@@ -180,7 +168,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <Button
               size="lg"
-              className="group bg-primary hover:bg-primary-glow text-primary-foreground px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-[var(--glow-purple)] transition-all duration-500"
+              className="group bg-primary hover:bg-primary-glow text-primary-foreground px-10 py-7 text-base font-medium rounded-xl shadow-[var(--shadow-elevated)] hover:shadow-[var(--glow-primary)] hover:scale-105 transition-all duration-300"
             >
               Explore Destinations
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -188,41 +176,42 @@ const Index = () => {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-6 text-lg rounded-2xl border-primary/30 hover:bg-primary/10 backdrop-blur-sm transition-all duration-500"
+              className="px-10 py-7 text-base font-medium rounded-xl border-border/50 bg-background/5 backdrop-blur-md hover:bg-background/10 hover:border-primary/30 transition-all duration-300"
             >
               Plan Your Trip
             </Button>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Minimal Scroll Indicator */}
         <div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-float"
-          style={{ opacity: parallaxOpacity }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          style={{ opacity: parallaxOpacity * 0.6 }}
         >
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-primary rounded-full animate-pulse" />
+          <div className="w-5 h-8 border border-foreground/20 rounded-full flex items-start justify-center p-1">
+            <div className="w-1 h-2 bg-foreground/40 rounded-full animate-pulse" />
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-20 px-6">
+      <section className="relative py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="observe-fade text-center p-6 rounded-2xl backdrop-blur-sm border border-primary/10"
+                className="observe-fade text-center p-8 rounded-2xl backdrop-blur-md border border-border/50 hover:border-primary/30 transition-all duration-300 hover:scale-105"
                 style={{
                   animationDelay: `${index * 0.1}s`,
-                  background: "var(--gradient-glass)",
+                  background: "var(--gradient-card)",
+                  boxShadow: "var(--shadow-card)",
                 }}
               >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -233,18 +222,18 @@ const Index = () => {
       <section className="relative py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 observe-fade">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Why Travel{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 With Us?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
               Experience the perfect blend of adventure, comfort, and unforgettable moments
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Map,
@@ -267,34 +256,22 @@ const Index = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="observe-fade group relative p-8 rounded-3xl border border-primary/20 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:scale-105"
+                className="observe-fade group relative p-8 rounded-2xl border border-border/50 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-primary/30 hover:scale-[1.02]"
                 style={{
-                  background: "var(--gradient-glass)",
+                  background: "var(--gradient-card)",
+                  boxShadow: "var(--shadow-card)",
                   animationDelay: feature.delay,
                 }}
               >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-transparent" />
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <feature.icon className="w-7 h-7 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground/80 text-sm leading-relaxed">{feature.description}</p>
                 </div>
-
-                {/* Shine Effect */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-                  style={{
-                    background: "var(--gradient-shine)",
-                    backgroundSize: "200% 200%",
-                    animation: "shimmer 2s ease-in-out infinite",
-                  }}
-                />
               </div>
             ))}
           </div>
@@ -305,57 +282,64 @@ const Index = () => {
       <section className="relative py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 observe-fade">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Popular{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Destinations
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
               Handpicked destinations that will take your breath away
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {destinations.map((destination, index) => (
               <div
                 key={index}
-                className="observe-fade group relative rounded-3xl overflow-hidden border border-primary/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-primary/40"
+                className="observe-fade group relative rounded-2xl overflow-hidden border border-border/50 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/30"
                 style={{
                   animationDelay: `${index * 0.2}s`,
+                  boxShadow: "var(--shadow-card)",
                 }}
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={destination.image}
                     alt={destination.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div 
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(180deg, transparent 0%, hsl(240 40% 8% / 0.8) 100%)" }}
+                  />
                   
                   {/* Location Badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full backdrop-blur-md border border-primary/20 flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-foreground">{destination.location}</span>
+                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg backdrop-blur-md bg-background/20 border border-border/30 flex items-center gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-primary" />
+                    <span className="text-xs font-medium text-foreground">{destination.location}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6" style={{ background: "var(--gradient-glass)" }}>
-                  <h3 className="text-2xl font-bold mb-3 text-foreground">{destination.title}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                <div 
+                  className="p-6"
+                  style={{ background: "var(--gradient-card)" }}
+                >
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{destination.title}</h3>
+                  <p className="text-muted-foreground/80 text-sm mb-5 leading-relaxed">
                     {destination.description}
                   </p>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-primary">{destination.price}</span>
+                    <span className="text-base font-bold text-primary">{destination.price}</span>
                     <Button
                       size="sm"
-                      className="bg-primary/20 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/30 rounded-xl transition-all duration-300"
+                      className="bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/20 rounded-lg transition-all duration-300 hover:shadow-[var(--glow-primary)]"
                     >
                       View Details
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                      <ArrowRight className="ml-1.5 w-4 h-4" />
                     </Button>
                   </div>
                 </div>
@@ -369,45 +353,46 @@ const Index = () => {
       <section className="relative py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 observe-fade">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Traveler{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Stories
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
               Real experiences from our amazing community of explorers
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="observe-fade p-8 rounded-3xl border border-primary/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-primary/40"
+                className="observe-fade p-8 rounded-2xl border border-border/50 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/30"
                 style={{
-                  background: "var(--gradient-glass)",
+                  background: "var(--gradient-card)",
+                  boxShadow: "var(--shadow-card)",
                   animationDelay: `${index * 0.2}s`,
                 }}
               >
                 {/* Rating Stars */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-0.5 mb-5">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                <p className="text-muted-foreground/90 text-sm mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-3 pt-4 border-t border-border/30">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                    <div className="font-semibold text-sm text-foreground">{testimonial.name}</div>
+                    <div className="text-xs text-muted-foreground/70">{testimonial.location}</div>
                   </div>
                 </div>
               </div>
@@ -420,31 +405,35 @@ const Index = () => {
       <section className="relative py-32 px-6">
         <div className="max-w-4xl mx-auto text-center observe-fade">
           <div
-            className="p-16 rounded-[3rem] border border-primary/20 backdrop-blur-sm relative overflow-hidden"
-            style={{ background: "var(--gradient-glass)" }}
+            className="p-12 md:p-16 rounded-3xl border border-border/50 backdrop-blur-md relative overflow-hidden"
+            style={{ 
+              background: "var(--gradient-card)",
+              boxShadow: "var(--shadow-elevated)",
+            }}
           >
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-glow" />
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/40 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10">
-              <Globe className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
-              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                <Globe className="w-7 h-7 text-primary" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 Ready to Start Your{" "}
-                <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Adventure?
                 </span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                Join thousands of travelers who have discovered the world with us.
-                Your dream destination is just one click away.
+              <p className="text-lg text-muted-foreground/80 mb-8 max-w-2xl mx-auto">
+                Join thousands of travelers who have discovered the world with us
               </p>
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary-glow text-primary-foreground px-12 py-7 text-xl rounded-2xl shadow-lg hover:shadow-[var(--glow-purple)] transition-all duration-500 hover:scale-105"
+                className="bg-primary hover:bg-primary-glow text-primary-foreground px-10 py-7 text-base font-medium rounded-xl shadow-[var(--shadow-elevated)] hover:shadow-[var(--glow-primary)] hover:scale-105 transition-all duration-300"
               >
                 Book Your Journey
-                <ArrowRight className="ml-2 w-6 h-6" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
           </div>
@@ -452,45 +441,52 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-primary/10 py-12 px-6 backdrop-blur-sm">
+      <footer className="relative border-t border-border/30 py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="text-lg font-bold mb-4 text-foreground">Wanderlust Travels</h3>
-              <p className="text-sm text-muted-foreground">
-                Creating unforgettable journeys since 2010
+              <div className="flex items-center gap-2 mb-4">
+                <Globe className="w-7 h-7 text-primary" />
+                <span className="text-xl font-bold text-foreground">TravelX</span>
+              </div>
+              <p className="text-muted-foreground/70 text-sm leading-relaxed">
+                Creating unforgettable travel experiences since 2009. Your journey begins here.
               </p>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-3 text-foreground">Destinations</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Europe</li>
-                <li>Asia</li>
-                <li>Americas</li>
-                <li>Africa</li>
+              <h4 className="text-foreground font-semibold text-sm mb-4">Destinations</h4>
+              <ul className="space-y-2.5 text-sm text-muted-foreground/70">
+                <li className="hover:text-primary transition-colors cursor-pointer">Europe</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Asia</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Americas</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Africa</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-3 text-foreground">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>About Us</li>
-                <li>Our Team</li>
-                <li>Careers</li>
-                <li>Contact</li>
+              <h4 className="text-foreground font-semibold text-sm mb-4">Company</h4>
+              <ul className="space-y-2.5 text-sm text-muted-foreground/70">
+                <li className="hover:text-primary transition-colors cursor-pointer">About Us</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Careers</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Blog</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Press</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-3 text-foreground">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>FAQ</li>
-                <li>Travel Insurance</li>
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
+              <h4 className="text-foreground font-semibold text-sm mb-4">Support</h4>
+              <ul className="space-y-2.5 text-sm text-muted-foreground/70">
+                <li className="hover:text-primary transition-colors cursor-pointer">Contact</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">FAQ</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Terms</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Privacy</li>
               </ul>
             </div>
           </div>
-          <div className="text-center text-muted-foreground text-sm pt-8 border-t border-primary/10">
-            <p>© 2025 Wanderlust Travels. Crafted with passion for adventure.</p>
+
+          <div className="pt-8 border-t border-border/20 text-center text-xs text-muted-foreground/60">
+            <p>© 2024 TravelX. All rights reserved.</p>
           </div>
         </div>
       </footer>
